@@ -14,7 +14,7 @@ public class App {
         {
             if(input == 1)
             {
-                add();
+                add(); // split into two methods to get name and id
             }
             else if(input == 2)
             {
@@ -44,7 +44,7 @@ public class App {
         System.out.println("5 - Exit");
     }
 
-    public static void add()
+    public static void add() // split into two methods-- both return a string for name and id
     {
         Scanner scan = new Scanner(System.in);
         System.out.println("Student Name: ");
@@ -52,7 +52,7 @@ public class App {
         System.out.println("Student ID");
         String id = scan.nextLine();
 
-        
+
     }
 
     public static void find()
