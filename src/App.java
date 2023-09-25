@@ -46,7 +46,13 @@ public class App {
 
     public static void add()
     {
-        System.out.println("you added");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Student Name: ");
+        String name = scan.nextLine();
+        System.out.println("Student ID");
+        String id = scan.nextLine();
+
+        
     }
 
     public static void find()
