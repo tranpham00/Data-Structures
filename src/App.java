@@ -7,30 +7,55 @@ public class App {
         HashMap<String, String> students = new HashMap<String, String>();
 
         menu();
-        System.out.println("Enter a Command (Enter 5 to Exit): ");
-        int input = scan.nextInt();
+        int intInput = 0;
 
-        while(input != 5)
+        while(intInput != 5)
         {
-            if(input == 1)
+            System.out.println("Enter a Command (Enter 5 to Exit): ");
+            String input = scan.nextLine();
+            intInput = Integer.parseInt(input);
+            if(intInput == 1)
             {
-                add(); // split into two methods to get name and id
+                System.out.println("Student Name: ");
+                String name = scan.nextLine();
+                System.out.println("Student ID: ");
+                String id = scan.nextLine();
+                students.put(id, name);
             }
-            else if(input == 2)
+            else if(intInput == 2)
             {
-                find();
+                System.out.println("Enter ID: ");
+                String id = scan.nextLine();
+                if(id == null)
+                {
+                    System.out.println("Student does not exist in the database.");
+                }
+                else
+                {
+                    System.out.println(students.get(id));
+                }
             }
-            else if(input == 3)
+            else if(intInput == 3)
             {
-                delete();
+                System.out.println("Enter ID: ");
+                String id = scan.nextLine();
+                if(id == null)
+                {
+                    System.out.println("Student does not exist in the database.");
+                }
+                else
+                {
+                    System.out.println(students.remove(id) + " has been removed.");
+                }
             }
-            else if(input == 4)
+            else if(intInput == 4)
             {
-                showAll();
+                for(String student : students.keySet())
+                {
+                    System.out.println("Student Name: " + students.get(student) + " Student ID: " + student);
+                }
             }
             menu();
-            System.out.println("Enter a Command (Enter 5 to Exit): ");
-            input = scan.nextInt();
         }
         System.out.println("Exited program. Have a good day.");
     }
@@ -43,39 +68,4 @@ public class App {
         System.out.println("4 - Show All Student");
         System.out.println("5 - Exit");
     }
-
-    public static void add() // split into two methods-- both return a string for name and id
-    {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Student Name: ");
-        String name = scan.nextLine();
-        System.out.println("Student ID");
-        String id = scan.nextLine();
-
-
-    }
-
-    public static void find()
-    {
-        System.out.println("you found");
-    }
-
-    public static void delete()
-    {
-        System.out.println("you deleted");
-    }
-
-    public static void showAll()
-    {
-        System.out.println("you showed all");
-    }
 }
-
-
-/*
- * scanner
- * hashmap
- * print for the menu
- * loop
- * methods for all the menu options (except exit)
- */
