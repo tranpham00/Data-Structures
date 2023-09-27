@@ -52,8 +52,14 @@ public class App {
             {
                 for(String student : students.keySet())
                 {
-                    System.out.println("Student Name: " + students.get(student) + " Student ID: " + student);
+                    System.out.println("Student Name: " + students.get(student));
+                    System.out.println("Student ID: " + student);
+                    System.out.println("-----------");
                 }
+            }
+            else
+            {
+                System.out.println("Invalid Command.");
             }
             menu();
         }
